@@ -1,0 +1,227 @@
+$primary: #3e976c;
+$secondary: #eeeeee;
+$inputBackground: #f7f7f7;
+$inputColor: #666;
+$subscribeInpColor: #dddddd;
+$titleColor: #222;
+$circlesBgColor: rgba(62, 151, 108, 0.4);
+$white: #fff;
+$socialIconBgColor: #bdefd7;
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.absolute-with-circle-border-radius {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.title-style {
+    font-weight: 600;
+    line-height: 1.2em;
+    text-transform: none;
+    color: $titleColor;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.links-style {
+    color: $inputColor;
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    &:hover {
+        color: $primary;
+    }
+}
+
+.footer-section{
+    width:100%;
+    background-color: #f3f3f3;
+    padding-top: 2rem;
+    .footer-main-flex {
+        @extend .flex-center;
+        flex-direction: column;
+        .footer-first-section {
+            display: flex;
+            text-align: left;
+            gap: 15px;
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
+            .app-section {
+                flex: 1.5;
+                margin-right: 35px;
+                .title-container {
+                    @extend .flex-center;
+                    position: relative;
+                    width: fit-content;
+                    .circles {
+                        @extend .absolute-with-circle-border-radius;
+                        background-color: $circlesBgColor;
+                    }
+        
+                    .circle-1 {
+                        top: 21px;
+                        left: -12px;
+                        width: 25px;
+                        height: 25px;
+                    }
+        
+                    .circle-2 {
+                        top: 5px;
+                        right: -7px;
+                        width: 20px;
+                        height: 20px;
+                    }
+        
+                    .title {
+                        font-weight: 500;
+                        flex: 1.3;
+                        text-align: left;
+                        font-size: 30px;
+                    }
+                }
+                .desc {
+                    font-weight: 400;
+                    line-height: 26px;
+                    color: $inputColor;
+                }
+                .social-icons{
+                    @extend .flex-center;
+                    div{
+                        height: 30px;
+                        width: 30px;
+                        background-color: $white;
+                        display: block;
+                        border-radius: 50%;
+                        line-height: 35px;
+                        cursor: pointer;
+                        text-align: center;
+                        margin-right: 10px;
+                        color: $inputColor;
+                        &:hover {
+                            background-color: $socialIconBgColor;
+                            svg {
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+            .app-links-section {
+                flex: 1;
+                margin-top: 10px;
+                .links-title {
+                    @extend .title-style;
+                }
+                .links {
+                    @extend .links-style;
+                }
+            }
+            .app-contacts-section{
+                flex: 1;
+                margin-top: 10px;
+                .contacts-title {
+                    @extend .title-style;
+                }
+                .links {
+                    @extend .links-style;
+                }
+            }
+            .app-subcribe-section {
+                flex: 1.5;
+                margin-top: 10px;
+                .subcribe-title {
+                    @extend .title-style;
+                }
+                .subcribe-desc {
+                    font-weight: 400;
+                    line-height: 26px;
+                    color: $inputColor;
+                    margin-top: 20px;
+                    span {
+                        color: $primary;
+                        cursor: pointer;
+                    }
+                }
+                .subcripe-inp-section {
+                    .search-wrapper {
+                        @extend .flex-center;
+                        position: relative;
+                
+                        button {
+                            border: none;
+                            cursor: pointer;
+                            @extend .flex-center;
+                            height: 40px;
+                            position: absolute;
+                            top: 0;
+                            right: 10px;
+                            color: $primary;
+                            background-color: transparent;
+                            font-weight: bold;
+                            height: 45px;
+                            font-size: 14px;
+                        }
+                
+                        input {
+                            outline: none;
+                            border: 1px solid $subscribeInpColor;
+                            color: $inputColor;
+                            width: 100%;
+                            height: 45px;
+                            padding: 0 20px;
+                            border-radius: 50px;
+                            max-width: 100%;
+                            font-size: 14px;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+        .footer-sec-section {
+            border-top: 1px solid $secondary;
+            width:100%;
+            .footer-sec-inner{
+                @extend .flex-center;
+                justify-content: space-between;
+                height: 80px;
+                // border-top: 1px solid $secondary;
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    gap: 10px;
+                }
+                .left-inner {
+                    font-weight: 400;
+                    line-height: 26px;
+                    color: $inputColor;
+                    font-size: 14px;
+                    span {
+                        color: $primary;
+                        cursor: pointer;
+                    }
+                } 
+                .policy-links {
+                    @extend .flex-center;
+                    gap:10px;
+                    div {
+                        color: $inputColor;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        font-weight: 400;
+                        cursor: pointer;
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

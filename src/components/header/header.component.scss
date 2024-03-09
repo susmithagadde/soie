@@ -1,0 +1,222 @@
+$primary: #3e976c;
+$secondary: #eeeeee;
+$inputBackground: #f7f7f7;
+$inputColor: #666;
+$circlesBgColor: rgba(62, 151, 108, 0.4);
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.absolute-with-circle-border-radius {
+    position: absolute;
+    border-radius: 50%;
+}
+
+
+.header-wrapper {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid $secondary;
+
+    .mobile-view-menu {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background: rgba(0, 0, 0, 0.6);
+        top: -80px;
+        left: 0;
+        z-index: 98;
+
+        .header-menu-side-bar {
+            position: absolute;
+            top: 0;
+            background: white;
+            padding: 20px;
+            // border: 1px solid #eee;
+            height: 100%;
+            z-index: 99;
+
+            .menu-close-icon {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: flex-end;
+                margin-right: 20px;
+                padding: 10px 0 20px 0;
+                font-size: 25px;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                padding: 0;
+                li {
+                    margin: 15px;
+                    width:100%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .nav-comp {
+        margin: auto;
+        height: inherit;
+
+        @media (min-width: 1200px) {
+            width: 1200px;
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            width: 970px;
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            width: 750px;
+        }
+
+        @media (max-width: 767px) {
+            padding: 0 20px;
+        }
+
+        .nav-mobile-container {
+            display: none;
+
+            @media (max-width: 990px) {
+                display: flex;
+                align-items: center;
+                height: inherit;
+            }
+
+            .menu-icon {
+                font-size: 20px;
+                margin-right: 20px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+        }
+
+        .nav-container {
+            @extend .flex-center;
+            height: inherit;
+
+            @media (max-width: 990px) {
+                display: none;
+            }
+        }
+
+        .title-container {
+            @extend .flex-center;
+            position: relative;
+
+            .circles {
+                @extend .absolute-with-circle-border-radius;
+                background-color: $circlesBgColor;
+            }
+
+            .circle-1 {
+                top: 21px;
+                left: -12px;
+                width: 25px;
+                height: 25px;
+            }
+
+            .circle-2 {
+                top: 5px;
+                right: -7px;
+                width: 20px;
+                height: 20px;
+            }
+
+            .title {
+                font-weight: 500;
+                flex: 1.3;
+                text-align: left;
+                font-size: 30px;
+            }
+        }
+    }
+
+    .nav-links {
+        flex: 2;
+
+        ul {
+            @extend .flex-center;
+
+            .active {
+                color: $primary;
+            }
+
+            li {
+                list-style: none;
+                margin: 10px;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .nav-right-panel {
+        @extend .flex-center;
+        flex: 2;
+        justify-content: flex-end;
+
+        div {
+            @extend .flex-center;
+            margin: 10px;
+            position: relative;
+
+            svg {
+                font-size: 20px;
+            }
+
+            .badge {
+                font-size: 10px;
+                @extend .absolute-with-circle-border-radius;
+                top: -7px;
+                right: -13px;
+                width: 16px;
+                height: 16px;
+                background-color: $primary;
+                color: #fff;
+                font-weight: 700;
+                line-height: 18px;
+            }
+        }
+    }
+
+    .search-wrapper {
+        @extend .flex-center;
+        position: relative;
+
+        button {
+            border: none;
+            cursor: pointer;
+            @extend .flex-center;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            color: $primary;
+            background-color: transparent;
+
+            svg {
+                font-size: 20px;
+            }
+        }
+
+        input {
+            outline: none;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            color: #666;
+            border: 1px solid $secondary;
+            background: $inputBackground;
+            padding: 0 40px 0 20px;
+            max-width: 350px;
+        }
+    }
+}
